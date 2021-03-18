@@ -14,8 +14,6 @@ histEq_B=cv.equalizeHist(B)
 
 histEq1=cv.merge((histEq_R,histEq_G,histEq_B))
 
-
-##Using CLAHE 
 #clahe=cv.createCLAHE()
 clahe=cv.createCLAHE(clipLimit=2.0, tileGridSize=(8,8)) #adjusts the histogram
 
@@ -24,7 +22,6 @@ histEq2_G=clahe.apply(G)
 histEq2_B=clahe.apply(B)
 
 histEq2=cv.merge((histEq2_R,histEq2_G,histEq2_B))
-
 
 output=[img,histEq1, histEq2]
 titles=['Original Image','Adjusted Histogram','CLAHE']
